@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAUTI INITIATIVE - Community Support</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            text-align: center;
+            z-index: 1000;
+        }
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        .navbar li {
+            float: left;
+        }
+        .navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navbar li a:hover {
+            background-color: green;
+            border-radius: 5px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 60px auto 0;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            color: green;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+        .slides {
+            display: none;
+        }
+        .slides img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        @-webkit-keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+        .activities {
+            font-style: italic;
+            text-align: left;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        .activities ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .activities li {
+            margin-bottom: 10px;
+            font-size: 22px;
+            background-color: #e0f7fa;
+            padding: 10px;
+            border-radius: 5px;
+            flex: 1 1 45%;
+            margin: 5px;
+            color: #333;
+        }
+        .activities li:nth-child(odd) {
+            color: green;
+        }
+        .activities li:nth-child(even) {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="community_support.html">Community Support</a></li>
+            <li><a href="objective.html">Objective</a></li>
+            <li><a href="core_values.html">Core Values</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>SAUTI INITIATIVE - Community Support</h1>
+        <p>At SAUTI INITIATIVE, we are dedicated to transforming lives through various support forums. Our initiatives are designed to empower and uplift the community, ensuring sustainable growth and development.</p>
+
+        <div class="slideshow-container">
+            <div class="slides fade">
+                <img src="images/support 1.jpg" alt="Support 1">
+                <div class="text">Educational Support: Providing resources and training to enhance learning opportunities.</div>
+            </div>
+            <div class="slides fade">
+                <img src="images/support 2.jpg" alt="Support 2">
+                <div class="text">Healthcare Initiatives: Ensuring access to essential health services and hygiene products.</div>
+            </div>
+            <div class="slides fade">
+                <img src="images/support 3.jpg" alt="Support 3">
+                <div class="text">Community Engagement: Organizing events and forums to foster unity and collaboration.</div>
+            </div>
+            <div class="slides fade">
+                <img src="images/support 4.jpg" alt="Support 4">
+                <div class="text">Economic Empowerment: Providing training and resources for sustainable livelihoods.</div>
+            </div>
+            <div class="slides fade">
+                <img src="images/support 5.jpg" alt="Support 5">
+                <div class="text">Environmental Conservation: Promoting practices that protect and sustain our natural resources.</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span> 
+            <span class="dot" onclick="currentSlide(5)"></span> 
+        </div>
+
+        <div class="activities">
+            <h2>Our Activities</h2>
+            <ul>
+                <li>Educating society on hygiene practices to promote health and well-being.</li>
+                <li>Engaging intensively in activities that enhance education in the community.</li>
+                <li>Organizing Harambees to support community projects and initiatives.</li>
+                <li>Providing vocational training to empower individuals with practical skills.</li>
+                <li>Supporting small businesses through microfinance and mentorship programs.</li>
+                <li>Promoting environmental conservation through tree planting and clean-up drives.</li>
+                <li>Facilitating access to clean water and sanitation facilities.</li>
+                <li>Encouraging youth participation in sports and recreational activities.</li>
+                <li>Offering counseling and                <li>Offering counseling and mental health support services.</li>
+                <li>Collaborating with local and international partners to amplify our impact.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 4000); // Change image every 4 seconds
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+    </script>
+</body>
+</html>

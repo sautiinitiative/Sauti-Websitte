@@ -1,0 +1,139 @@
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Threading;
+using System.Windows.Forms;
+
+namespace OSFunctionalityApp
+{
+    public partial class MainForm : Form
+    {
+        public MainForm()
+        {
+            InitializeComponent();
+        }
+
+        // File Management
+        private void btnFileManagement_Click(object sender, EventArgs e)
+        {
+            string filePath = "testFile.txt";
+
+            // 1. Create a file
+            File.WriteAllText(filePath, "Hello, OS Functions!");
+
+            // 2. Read the file
+            string content = File.ReadAllText(filePath);
+            MessageBox.Show($"File Content: {content}");
+
+            // 3. Append to the file
+            File.AppendAllText(filePath, "\nAppended Text");
+
+            // 4. Rename the file
+            string newFilePath = "renamedFile.txt";
+            File.Move(filePath, newFilePath);
+
+            // 5. Delete the file
+            File.Delete(newFilePath);
+            MessageBox.Show("File operations completed!");
+        }
+
+        // Directory Management
+        private void btnDirectoryManagement_Click(object sender, EventArgs e)
+        {
+            string dirPath = "TestDirectory";
+
+            // 1. Create a directory
+            Directory.CreateDirectory(dirPath);
+
+            // 2. Create a subdirectory
+            Directory.CreateDirectory(Path.Combine(dirPath, "SubDir"));
+
+            // 3. Enumerate directories
+            string[] directories = Directory.GetDirectories(dirPath);
+            MessageBox.Show($"Directories: {string.Join(", ", directories)}");
+
+            // 4. Enumerate files
+            string[] files = Directory.GetFiles(dirPath);
+            MessageBox.Show($"Files: {string.Join(", ", files)}");
+
+            // 5. Delete the directory
+            Directory.Delete(dirPath, true);
+            MessageBox.Show("Directory operations completed!");
+        }
+
+        // Process Management
+        private void btnProcessManagement_Click(object sender, EventArgs e)
+        {
+            // 1. Start a process
+            Process process = Process.Start("notepad.exe");
+
+            // 2. List all running processes
+            var processes = Process.GetProcesses().Select(p => p.ProcessName).ToArray();
+            MessageBox.Show($"Running Processes: {string.Join(", ", processes)}");
+
+            // 3. Get process details
+            var processDetails = Process.GetProcessesByName("notepad");
+            if (processDetails.Any())
+                MessageBox.Show($"Notepad ID: {processDetails.First().Id}");
+
+            // 4. Close a process
+            foreach (var proc in processDetails)
+            {
+                proc.Kill();
+            }
+
+            // 5. Start a process with arguments
+            Process.Start("cmd.exe", "/C echo Process operations completed!");
+        }
+
+        // System Information
+        private void btnSystemInfo_Click(object sender, EventArgs e)
+        {
+            // 1. Get OS Version
+            string osVersion = Environment.OSVersion.ToString();
+
+            // 2. Get Machine Name
+            string machineName = Environment.MachineName;
+
+            // 3. Get Environment Variables
+            var variables = Environment.GetEnvironmentVariables();
+
+            // 4. Get Processor Count
+            int processorCount = Environment.ProcessorCount;
+
+            // 5. Get System Directory
+            string systemDirectory = Environment.SystemDirectory;
+
+            MessageBox.Show($"OS: {osVersion}\nMachine: {machineName}\nProcessors: {processorCount}\nSystem Directory: {systemDirectory}");
+        }
+
+        // Thread Management
+        private void btnThreadManagement_Click(object sender, EventArgs e)
+        {
+            // 1. Create and start a thread
+            Thread thread = new Thread(() => MessageBox.Show("Thread is running!"));
+            thread.Start();
+
+            // 2. Sleep thread
+            Thread.Sleep(1000);
+
+            // 3. Abort the thread
+            if (thread.IsAlive)
+            {
+                thread.Abort();
+            }
+
+            // 4. Start multiple threads
+            for (int i = 0; i < 3; i++)
+            {
+                new Thread(() => MessageBox.Show($"Thread {i + 1} running")).Start();
+            }
+
+            // 5. Background thread
+            Thread backgroundThread = new Thread(() => MessageBox.Show("Background Thread"));
+            backgroundThread.IsBackground = true;
+            backgroundThread.Start();
+        }
+    }
+}

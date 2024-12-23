@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAUTI INITIATIVE</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('images/background.jpg'); /* Your background image */
+            background-size: cover;
+            background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+            background-position: center center; /* Center the image */
+            background-attachment: fixed; /* Fix the image so it stays in place when scrolling */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.3); /* Further reduced opacity for more transparency */
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            text-align: center;
+            z-index: 1000;
+        }
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        .navbar li {
+            float: left;
+        }
+        .navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navbar li a:hover {
+            background-color: green;
+            border-radius: 5px;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            z-index: 1;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity for better visibility */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for better contrast */
+            margin-top: 100px; /* Adjust margin to avoid overlapping with nav */
+            position: relative;
+            z-index: 2;
+        }
+        .logo {
+            width: 80%; /* Increased width to make the logo bigger */
+            max-width: 1000px; /* Adjusted max-width */
+            height: auto;
+            margin-top: 20px; /* Added margin-top to push the logo down */
+        }
+        .title {
+            color: green;
+            font-size: 24px; /* Reduced font size */
+            margin: 10px 0;
+            font-family: 'Raleway', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Added text shadow for better readability */
+        }
+        .slogan {
+            color: yellow; /* Increased contrast color */
+            font-size: 50px; /* Increased font size */
+            margin-top: 5px;
+            text-decoration: underline;
+            font-family: 'Brush Script MT', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Added text shadow for better readability */
+        }
+        .mission-vision {
+            margin-top: 20px;
+            text-align: left; /* Align text to the left */
+            color: white;
+        }
+        .mission-vision h2 {
+            margin-bottom: 10px;
+            text-align: left; /* Align headings to the left */
+            font-style: italic; /* Make text cursive */
+            font-size: 24px; /* Adjusted font size for consistency */
+            transition: color 0.3s;
+            text-transform: lowercase; /* Made text lowercase */
+            text-decoration: underline; /* Underline text */
+        }
+        .mission-vision h2:hover {
+            color: blue;
+        }
+        .mission-vision p {
+            margin: 5px 0;
+            text-indent: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="community_support.html">Community Support</a></li>
+            <li><a href="objective.html">Objective</a></li>
+            <li><a href="core_values.html">Core Values</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="overlay"></div>
+    <div class="container">
+        <img src="images/logo.png" alt="SAUTI INITIATIVE Logo" class="logo">
+        <div class="title">SAUTI INITIATIVE</div>
+        <div class="slogan">Transforming lives through innovations</div>
+        <div class="mission-vision">
+            <h2>mission</h2>
+            <p>Empowering Tana River County to thrive through sustainable innovation and inclusive growth, we harness our natural abundance and rich human potential to overcome challenges and create lasting prosperity.</p>
+            <h2>vision</h2>
+            <p>We envision a vibrant future for Tana River County, where diverse communities thrive in harmony. Where innovations and the synergy of land, water, and people create a sustainable paradise.</p>
+            <p>Where every resident is educated, empowered, and united, crafting a legacy of resilience and prosperity that resonates through generations and inspires the world.</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
